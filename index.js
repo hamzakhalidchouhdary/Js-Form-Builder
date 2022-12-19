@@ -8,14 +8,22 @@ const formData = [
   {
     type: 'radio',
     name: 'male',
-    placeholder: 'first name',
     value: 'male'
   },
   {
     type: 'checkbox',
     name: 'male',
-    placeholder: 'first name',
     value: 'male'
+  },
+  {
+    type: 'range',
+    name: 'male',
+    value: '',
+  },
+  {
+    type: 'heading',
+    size: 1,
+    value: 'largest heading',
   }
 ]
 
@@ -49,11 +57,25 @@ const createCheckInput = (data) => {
   tag.setAttribute('value', data.value);
   return tag;
 }
+const createRangeInput = (data) => {
+  let tag = document.createElement('input');
+  tag.setAttribute('type', 'range')
+  tag.setAttribute('name', data.name);
+  tag.setAttribute('value', data.value);
+  return tag;
+}
+const createHeading = (data) => {
+  let tag = document.createElement(`h${data.size}`);
+  tag.innerText = data.value;
+  return tag;
+}
 
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
   checkbox: createCheckInput,
+  range: createRangeInput,
+  heading: createHeading
 }
 
 showForm();
