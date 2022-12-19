@@ -1,5 +1,6 @@
 const formData = [
   {
+    statement: 'You name',
     type: 'text',
     name: 'fname',
     placeholder: 'first name',
@@ -30,44 +31,54 @@ const formData = [
 const root = document.getElementById('root');
 
 const showForm = () => {
-  formData.forEach(field => {
-    root.appendChild(getFormField[field.type](field));
+  formData.forEach(question => {
+    root.appendChild(getFormField[question.type](question));
   });
 }
 
 const createTextInput = (data) => {
-  let tag = document.createElement('input');
-  tag.setAttribute('type', 'text')
-  tag.setAttribute('placeholder', data.placeholder);
-  tag.setAttribute('name', data.name);
-  tag.setAttribute('value', data.value);
-  return tag;
+  let questionContaioner = document.createElement('div');
+  let field = document.createElement('input');
+  field.setAttribute('type', 'text')
+  field.setAttribute('placeholder', data.placeholder);
+  field.setAttribute('name', data.name);
+  field.setAttribute('value', data.value);
+  questionContaioner.appendChild(field);
+  return questionContaioner;
 }
 const createRadioInput = (data) => {
-  let tag = document.createElement('input');
-  tag.setAttribute('type', 'radio')
-  tag.setAttribute('name', data.name);
-  tag.setAttribute('value', data.value);
-  return tag;
+  let questionContaioner = document.createElement('div');
+  let field = document.createElement('input');
+  field.setAttribute('type', 'radio')
+  field.setAttribute('name', data.name);
+  field.setAttribute('value', data.value);
+  questionContaioner.appendChild(field);
+  return questionContaioner;
 }
 const createCheckInput = (data) => {
-  let tag = document.createElement('input');
-  tag.setAttribute('type', 'checkbox')
-  tag.setAttribute('name', data.name);
-  tag.setAttribute('value', data.value);
-  return tag;
+  let questionContaioner = document.createElement('div');
+  let field = document.createElement('input');
+  field.setAttribute('type', 'checkbox')
+  field.setAttribute('name', data.name);
+  field.setAttribute('value', data.value);
+  questionContaioner.appendChild(field);
+  return questionContaioner;
 }
 const createRangeInput = (data) => {
-  let tag = document.createElement('input');
-  tag.setAttribute('type', 'range')
-  tag.setAttribute('name', data.name);
-  tag.setAttribute('value', data.value);
-  return tag;
+  let questionContaioner = document.createElement('div');
+  let field = document.createElement('input');
+  field.setAttribute('type', 'range')
+  field.setAttribute('name', data.name);
+  field.setAttribute('value', data.value);
+  questionContaioner.appendChild(field);
+  return questionContaioner;
 }
 const createHeading = (data) => {
-  let tag = document.createElement(`h${data.size}`);
-  tag.innerText = data.value;
-  return tag;
+  let questionContaioner = document.createElement('div');
+  let field = document.createElement(`h${data.size}`);
+  field.innerText = data.value;
+  questionContaioner.appendChild(field);
+  return questionContaioner;
 }
 
 const getFormField = {
