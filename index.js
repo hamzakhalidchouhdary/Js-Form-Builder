@@ -7,16 +7,19 @@ const formData = [
     value: ''
   },
   {
+    statement: 'your gender',
     type: 'radio',
     name: 'male',
     value: 'male'
   },
   {
+    statement: 'your hobbies',
     type: 'checkbox',
     name: 'male',
     value: 'male'
   },
   {
+    statement: 'rate my work',
     type: 'range',
     name: 'male',
     value: '',
@@ -38,6 +41,9 @@ const showForm = () => {
 
 const createTextInput = (data) => {
   let questionContaioner = document.createElement('div');
+  let questionStatement = document.createElement('h5');
+  questionStatement.innerText = data.statement;
+  questionContaioner.appendChild(questionStatement);
   let field = document.createElement('input');
   field.setAttribute('type', 'text')
   field.setAttribute('placeholder', data.placeholder);
@@ -48,6 +54,9 @@ const createTextInput = (data) => {
 }
 const createRadioInput = (data) => {
   let questionContaioner = document.createElement('div');
+  let questionStatement = document.createElement('h5');
+  questionStatement.innerText = data.statement;
+  questionContaioner.appendChild(questionStatement);
   let field = document.createElement('input');
   field.setAttribute('type', 'radio')
   field.setAttribute('name', data.name);
@@ -57,6 +66,9 @@ const createRadioInput = (data) => {
 }
 const createCheckInput = (data) => {
   let questionContaioner = document.createElement('div');
+  let questionStatement = document.createElement('h5');
+  questionStatement.innerText = data.statement;
+  questionContaioner.appendChild(questionStatement);
   let field = document.createElement('input');
   field.setAttribute('type', 'checkbox')
   field.setAttribute('name', data.name);
@@ -66,6 +78,9 @@ const createCheckInput = (data) => {
 }
 const createRangeInput = (data) => {
   let questionContaioner = document.createElement('div');
+  let questionStatement = document.createElement('h5');
+  questionStatement.innerText = data.statement;
+  questionContaioner.appendChild(questionStatement);
   let field = document.createElement('input');
   field.setAttribute('type', 'range')
   field.setAttribute('name', data.name);
