@@ -1,5 +1,10 @@
 const formData = [
   {
+    type: 'heading',
+    size: 1,
+    value: 'Example form',
+  },
+  {
     statement: 'You name',
     type: 'text',
     name: 'fname',
@@ -23,11 +28,6 @@ const formData = [
     type: 'range',
     name: 'male',
     value: '',
-  },
-  {
-    type: 'heading',
-    size: 1,
-    value: 'largest heading',
   }
 ]
 
@@ -41,10 +41,12 @@ const showForm = () => {
 
 const createTextInput = (data) => {
   let questionContaioner = document.createElement('div');
+  questionContaioner.setAttribute('class', 'form-group');
   let questionStatement = document.createElement('h5');
   questionStatement.innerText = data.statement;
   questionContaioner.appendChild(questionStatement);
   let field = document.createElement('input');
+  field.setAttribute('class', 'form-control');
   field.setAttribute('type', 'text')
   field.setAttribute('placeholder', data.placeholder);
   field.setAttribute('name', data.name);
@@ -54,6 +56,7 @@ const createTextInput = (data) => {
 }
 const createRadioInput = (data) => {
   let questionContaioner = document.createElement('div');
+  questionContaioner.setAttribute('class', 'form-group');
   let questionStatement = document.createElement('h5');
   questionStatement.innerText = data.statement;
   questionContaioner.appendChild(questionStatement);
@@ -66,6 +69,7 @@ const createRadioInput = (data) => {
 }
 const createCheckInput = (data) => {
   let questionContaioner = document.createElement('div');
+  questionContaioner.setAttribute('class', 'form-group');
   let questionStatement = document.createElement('h5');
   questionStatement.innerText = data.statement;
   questionContaioner.appendChild(questionStatement);
@@ -78,6 +82,7 @@ const createCheckInput = (data) => {
 }
 const createRangeInput = (data) => {
   let questionContaioner = document.createElement('div');
+  questionContaioner.setAttribute('class', 'form-group');
   let questionStatement = document.createElement('h5');
   questionStatement.innerText = data.statement;
   questionContaioner.appendChild(questionStatement);
@@ -90,6 +95,7 @@ const createRangeInput = (data) => {
 }
 const createHeading = (data) => {
   let questionContaioner = document.createElement('div');
+  questionContaioner.setAttribute('class', 'form-group');
   let field = document.createElement(`h${data.size}`);
   field.innerText = data.value;
   questionContaioner.appendChild(field);
