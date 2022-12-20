@@ -65,6 +65,16 @@ const showForm = () => {
   formData.forEach(question => {
     root.appendChild(getFormField[question.type](question));
   });
+  const submitBtn = document.createElement('button');
+  const resetBtn = document.createElement('button');
+  submitBtn.setAttribute('type', 'submit');
+  submitBtn.setAttribute('class', 'btn btn-success');
+  submitBtn.innerText = 'Submit';
+  resetBtn.setAttribute('type', 'reset');
+  resetBtn.setAttribute('class', 'btn btn-danger');
+  resetBtn.innerText = 'Clear';
+  root.appendChild(resetBtn);
+  root.appendChild(submitBtn);
 }
 
 const getQuestionWrapper = () => document.createElement('div');
