@@ -15,14 +15,41 @@ const formData = [
   {
     statement: 'your gender',
     type: 'radio',
-    name: 'male',
-    value: 'male'
+    name: 'gender',
+    options: [
+      {
+        label: 'Male',
+        value: 'male',
+        id: 'male'
+      },
+      {
+        label: 'Female', 
+        value: 'female',
+        id: 'female'
+      },
+    ]
   },
   {
     statement: 'your hobbies',
     type: 'checkbox',
     name: 'male',
-    value: 'male'
+    options: [
+      {
+        label: 'Traval',
+        value: 'traval',
+        id: 'traval'
+      },
+      {
+        label: 'Cooking',
+        value: 'cooking',
+        id: 'cooking'
+      },
+      {
+        label: 'Music',
+        value: 'music',
+        id: 'music'
+      },
+    ]
   },
   {
     statement: 'rate my work',
@@ -72,25 +99,35 @@ const createTextInput = (data) => {
 const createRadioInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getQuestionStatement(data.statement);
-  let field = document.createElement('input');
   questionContaioner.appendChild(questionStatement);
-  questionContaioner.appendChild(field);
   questionContaioner.setAttribute('class', 'form-group');
-  field.setAttribute('type', 'radio')
-  field.setAttribute('name', data.name);
-  field.setAttribute('value', data.value);
+  data.options.forEach(option => {
+    let label = getLabel(option.label, option.id || option.name)
+    let field = document.createElement('input');
+    label.appendChild(field);
+    field.setAttribute('type', 'radio')
+    field.setAttribute('name', data.name);
+    field.setAttribute('value', option.value);
+    field.setAttribute('id', option.id || option.value)
+    questionContaioner.appendChild(label);
+  })
   return questionContaioner;
 }
 const createCheckInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getQuestionStatement(data.statement);
-  let field = document.createElement('input');
   questionContaioner.setAttribute('class', 'form-group');
   questionContaioner.appendChild(questionStatement);
-  field.setAttribute('type', 'checkbox')
-  field.setAttribute('name', data.name);
-  field.setAttribute('value', data.value);
-  questionContaioner.appendChild(field);
+  data.options.forEach(option => {
+    let field = document.createElement('input');
+    let label = getLabel(option.label, option.id || option.name)
+    label.appendChild(field);
+    questionContaioner.appendChild(label);
+    field.setAttribute('type', 'checkbox')
+    field.setAttribute('name', data.name);
+    field.setAttribute('value', data.value);
+    field.setAttribute('id', option.id || option.name)
+  });
   return questionContaioner;
 }
 const createRangeInput = (data) => {
