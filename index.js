@@ -162,6 +162,10 @@ const createHeading = (data) => {
   return questionContaioner;
 }
 
+const FABHandler = () => {
+  console.log('fab clicked');
+}
+
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
