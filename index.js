@@ -162,8 +162,14 @@ const createHeading = (data) => {
   return questionContaioner;
 }
 
-const FABHandler = () => {
-  console.log('fab clicked');
+const showQuestionPopUp = () => {
+  const questionPopUp = document.getElementById('questionPopUp');
+  questionPopUp.classList.remove('hide');
+}
+
+const closeQuestionPopUp = () => {
+  const questionPopUp = document.getElementById('questionPopUp');
+  questionPopUp.classList.add('hide');
 }
 
 const getFormField = {
