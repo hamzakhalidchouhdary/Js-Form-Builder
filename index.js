@@ -13,6 +13,18 @@ const formData = [
     value: ''
   },
   {
+    statement: 'choose one',
+    type: 'select',
+    name: 'select',
+    options: [
+      {value: null, label: 'Select'},
+      {value: 1, label: 'One'},
+      {value: 2, label: 'Two'},
+      {value: 3, label: 'Three'},
+      {value: 4, label: 'Four'},
+    ],
+  },
+  {
     statement: 'your gender',
     type: 'radio',
     name: 'gender',
@@ -153,6 +165,22 @@ const createRangeInput = (data) => {
   questionContaioner.appendChild(field);
   return questionContaioner;
 }
+const createSelectInput = (data) => {
+  let questionContaioner = getQuestionWrapper();
+  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let field = document.createElement('select');
+  questionContaioner.setAttribute('class', 'form-group');
+  field.setAttribute('class', 'form-control')
+  data.options.forEach(option => {
+    let ele = document.createElement('option');
+    field.appendChild(ele);
+    ele.setAttribute('value', option.value);
+    ele.innerText = option.label;
+  });
+  questionContaioner.appendChild(questionStatement);
+  questionContaioner.appendChild(field);
+  return questionContaioner;
+}
 const createHeading = (data) => {
   let questionContaioner = getQuestionWrapper();
   let field = document.createElement(`h${data.size}`);
@@ -177,7 +205,8 @@ const getFormField = {
   radio: createRadioInput,
   checkbox: createCheckInput,
   range: createRangeInput,
-  heading: createHeading
+  heading: createHeading,
+  select: createSelectInput
 }
 
 showForm();
