@@ -54,7 +54,7 @@ const formData = [
   {
     statement: 'rate my work',
     type: 'range',
-    name: 'male',
+    name: 'rate',
     value: '',
   }
 ]
@@ -114,12 +114,12 @@ const createRadioInput = (data) => {
   data.options.forEach(option => {
     let label = getLabel(option.label, option.id || option.name)
     let field = document.createElement('input');
-    label.appendChild(field);
+    questionContaioner.appendChild(field);
+    questionContaioner.appendChild(label);
     field.setAttribute('type', 'radio')
     field.setAttribute('name', data.name);
     field.setAttribute('value', option.value);
     field.setAttribute('id', option.id || option.value)
-    questionContaioner.appendChild(label);
   })
   return questionContaioner;
 }
@@ -131,7 +131,7 @@ const createCheckInput = (data) => {
   data.options.forEach(option => {
     let field = document.createElement('input');
     let label = getLabel(option.label, option.id || option.name)
-    label.appendChild(field);
+    questionContaioner.appendChild(field);
     questionContaioner.appendChild(label);
     field.setAttribute('type', 'checkbox')
     field.setAttribute('name', data.name);
