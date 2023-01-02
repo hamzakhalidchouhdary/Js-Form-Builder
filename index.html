@@ -12,7 +12,7 @@
 <body>
   <form id="root" class="container"></form>
   <div id="questionPopUp" class="question-container hide">
-    <form class="question-form">
+    <form class="question-form" onsubmit="addNewQuestion(event)">
       <div class="form-group">
         <label for="title">Question</label>
         <input id="title" type="text" name="question" class="form-control">
