@@ -200,6 +200,14 @@ const closeQuestionPopUp = () => {
   questionPopUp.classList.add('hide');
 }
 
+const addTextInput = ({question: value, size = 1}) => {
+  formData.push({
+    type: 'heading',
+    value,
+    size
+  });
+}
+
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
@@ -209,11 +217,19 @@ const getFormField = {
   select: createSelectInput
 }
 
+const setFormField = {
+  heading: addTextInput,
+}
+
 showForm();
 
 function addNewQuestion(event) {
-  const [formData, formValidation, isErrors] = readFormFields(event);
+  const [questionData, formValidation, isErrors] = readFormFields(event);
   showErrors(formValidation);
+  if (!isErrors) {
+    setFormField[questionData.type](questionData);
+    showForm();
+  }
   console.log(formData);
 }
 
