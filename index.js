@@ -74,6 +74,7 @@ const formData = [
 const root = document.getElementById('root');
 
 const showForm = () => {
+  root.innerHTML = '';
   formData.forEach(question => {
     root.appendChild(getFormField[question.type](question));
   });
