@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
   <title>Document</title>
 </head>
-<body>
+<body class="text-capitalize">
   <form id="root" class="container"></form>
   <div id="questionPopUp" class="question-container hide">
     <form class="question-form" onsubmit="addNewQuestion(event)">
       <div class="form-group">
         <label for="title">Question</label>
         <input id="title" data-is-required="required" type="text" name="question" class="form-control">
-        <span id="question-error"></span>
+        <span id="question-error" class="text-danger small"></span>
       </div>
       <div class="form-group">
         <label for="type">Type</label>
@@ -27,7 +27,7 @@
           <option value="radio">Radio</option>
           <option value="checkbox">Check Box</option>
         </select>
-        <span id="type-error"></span>
+        <span id="type-error" class="text-danger small"></span>
       </div>
       <button type="button" class="btn btn-danger" onclick="closeQuestionPopUp()">Close</button>
       <button type="submit" class="btn btn-success">Save</button>
