@@ -209,6 +209,17 @@ const addHeading = ({question: value, size = 1}) => {
   });
 }
 
+const addTextInput = ({question: statement, name = '', placeholder = null}) => {
+  formData.push({
+    statement,
+    type: 'text',
+    name: name,
+    id: null,
+    placeholder: placeholder || name,
+    value: ''
+  });
+}
+
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
@@ -219,7 +230,8 @@ const getFormField = {
 }
 
 const setFormField = {
-  heading: addHeading
+  heading: addHeading,
+  text: addTextInput
 }
 
 showForm();
