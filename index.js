@@ -220,7 +220,7 @@ const addTextInput = ({question: statement, name = '', placeholder = null}) => {
   });
 }
 
-const addRadioInput = ({question: statement, name = '', options = []}) => {
+const addRadioInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
   formData.push({
     statement,
     type: 'radio',
@@ -229,7 +229,7 @@ const addRadioInput = ({question: statement, name = '', options = []}) => {
   });
 }
 
-const addCheckInput = ({question: statement, name = '', options = []}) => {
+const addCheckInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
   formData.push({
     statement,
     type: 'checkbox',
