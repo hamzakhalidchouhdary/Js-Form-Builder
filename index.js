@@ -229,6 +229,15 @@ const addRadioInput = ({question: statement, name = '', options = []}) => {
   });
 }
 
+const addCheckInput = ({question: statement, name = '', options = []}) => {
+  formData.push({
+    statement,
+    type: 'checkbox',
+    name,
+    options
+  });
+}
+
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
@@ -241,7 +250,8 @@ const getFormField = {
 const setFormField = {
   heading: addHeading,
   text: addTextInput,
-  radio: addRadioInput
+  radio: addRadioInput,
+  checkbox: addCheckInput
 }
 
 showForm();
