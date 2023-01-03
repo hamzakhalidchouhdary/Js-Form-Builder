@@ -201,7 +201,7 @@ const closeQuestionPopUp = () => {
   questionPopUp.classList.add('hide');
 }
 
-const addTextInput = ({question: value, size = 1}) => {
+const addHeading = ({question: value, size = 1}) => {
   formData.push({
     type: 'heading',
     value,
@@ -219,7 +219,7 @@ const getFormField = {
 }
 
 const setFormField = {
-  heading: addTextInput,
+  heading: addHeading
 }
 
 showForm();
