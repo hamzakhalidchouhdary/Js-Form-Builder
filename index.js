@@ -44,7 +44,7 @@ const formData = [
   {
     statement: 'your hobbies',
     type: 'checkbox',
-    name: 'male',
+    name: 'hobbies',
     options: [
       {
         label: 'Traval',
