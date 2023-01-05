@@ -15,7 +15,7 @@
     <form class="question-form" onsubmit="addNewQuestion(event)">
       <div class="form-group">
         <label for="type">Type</label>
-        <select data-is-required="required" class="form-control" name="type" id="type">
+        <select onchange="setNewFieldType(event.target.value)" data-is-required="required" class="form-control" name="type" id="type">
           <option value="">Select One</option>
           <option value="heading">Heading</option>
           <option value="text">Text</option>

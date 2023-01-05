@@ -276,6 +276,10 @@ const setFormField = {
 
 showForm();
 
+function setNewFieldType(event) {
+  console.log(event);
+}
+
 function addNewQuestion(event) {
   const [questionData, formValidation, isErrors] = readFormFields(event);
   showErrors(formValidation);
