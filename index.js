@@ -121,8 +121,10 @@ const createTextInput = (data) => {
 }
 const createRadioInput = (data) => {
   let questionContaioner = getQuestionWrapper();
-  let questionStatement = getQuestionStatement(data.statement);
-  questionContaioner.appendChild(questionStatement);
+  let labelContainer = getQuestionWrapper()
+  let questionStatement = getLabel(data.statement, data.id || data.name);
+  labelContainer.appendChild(questionStatement);
+  questionContaioner.appendChild(labelContainer);
   questionContaioner.setAttribute('class', 'form-group');
   data.options.forEach(option => {
     let label = getLabel(option.label, option.id || option.name)
@@ -138,9 +140,11 @@ const createRadioInput = (data) => {
 }
 const createCheckInput = (data) => {
   let questionContaioner = getQuestionWrapper();
-  let questionStatement = getQuestionStatement(data.statement);
+  let labelContainer = getQuestionWrapper()
+  let questionStatement = getLabel(data.statement, data.id || data.name);
+  labelContainer.appendChild(questionStatement);
+  questionContaioner.appendChild(labelContainer);
   questionContaioner.setAttribute('class', 'form-group');
-  questionContaioner.appendChild(questionStatement);
   data.options.forEach(option => {
     let field = document.createElement('input');
     let label = getLabel(option.label, option.id || option.name)
