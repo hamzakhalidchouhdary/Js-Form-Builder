@@ -14,16 +14,6 @@
   <div id="questionPopUp" class="question-container hide">
     <form class="question-form" onsubmit="addNewQuestion(event)">
       <div class="form-group">
-        <label for="title">Question</label>
-        <input id="title" data-is-required="required" type="text" name="question" class="form-control">
-        <span id="question-error" class="text-danger small"></span>
-      </div>
-      <div class="form-group">
-        <label for="title">name</label>
-        <input id="title" data-is-required="required" data-is-name="should be string" type="text" name="name" class="form-control">
-        <span id="name-error" class="text-danger small"></span>
-      </div>
-      <div class="form-group">
         <label for="type">Type</label>
         <select data-is-required="required" class="form-control" name="type" id="type">
           <option value="">Select One</option>
@@ -35,6 +25,16 @@
           <option value="select">Select</option>
         </select>
         <span id="type-error" class="text-danger small"></span>
+      </div>
+      <div class="form-group">
+        <label for="title">Question</label>
+        <input id="title" data-is-required="required" type="text" name="question" class="form-control">
+        <span id="question-error" class="text-danger small"></span>
+      </div>
+      <div class="form-group">
+        <label for="title">name</label>
+        <input id="title" data-is-required="required" data-is-name="should be string" type="text" name="name" class="form-control">
+        <span id="name-error" class="text-danger small"></span>
       </div>
       <button type="button" class="btn btn-danger" onclick="closeQuestionPopUp()">Close</button>
       <button type="submit" class="btn btn-success">Save</button>
