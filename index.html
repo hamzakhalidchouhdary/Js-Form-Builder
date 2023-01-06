@@ -53,7 +53,23 @@
         <label for="isEmail">email</label>
         <input id="isPattran" type="checkbox" name="validation" value="isPattran">
         <label for="isPattran">pattren</label>
-        <span id="placeholder-error" class="text-danger small"></span>
+        <span id="validation-error" class="text-danger small"></span>
+      </div>
+      <div>
+        <label for="options">Options</label>
+        <div class="form-group row">
+          <div class="col col-5 col-sm-5">
+            <input id="options" data-is-name="should be string" type="text" name="value" class="form-control w-100">
+            <span id="value-error" class="text-danger small"></span>
+          </div>
+          <div class="col col-5 col-sm-5">
+            <input id="options" data-is-name="should be string" type="text" name="label" class="form-control">
+            <span id="label-error" class="text-danger small"></span>
+          </div>
+          <div class="col col-2 col-sm-2">
+            <button type="button" class="btn btn-info float-right">ADD</button>
+          </div>
+        </div>
       </div>
       <button type="button" class="btn btn-danger" onclick="closeQuestionPopUp()">Close</button>
       <button type="submit" class="btn btn-success">Save</button>
