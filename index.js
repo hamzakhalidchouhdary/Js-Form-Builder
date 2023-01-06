@@ -280,6 +280,14 @@ const setFormField = {
 
 showForm();
 
+function showHeadingFields() {
+  
+}
+
+const newQuestionType = {
+  heading: showHeadingFields
+}
+
 function setNewFieldType(event) {
   console.log(event);
 }
