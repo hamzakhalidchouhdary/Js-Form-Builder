@@ -299,9 +299,18 @@ function showTextFields() {
   document.getElementById('validation-field').classList.remove('hide');
 }
 
+function showCheckalbeFields() {
+  document.getElementById('question-field').classList.remove('hide');
+  document.getElementById('name-field').classList.remove('hide');
+  document.getElementById('validation-field').classList.remove('hide');
+  document.getElementById('options-field').classList.remove('hide');
+}
+
 const newQuestionType = {
   heading: showHeadingFields,
   text: showTextFields,
+  radio: showCheckalbeFields,
+  checkbox: showCheckalbeFields,
   '': resetAllFields,
 }
 
