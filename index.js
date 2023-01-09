@@ -280,6 +280,14 @@ const setFormField = {
 
 showForm();
 
+function resetAllFields() {
+  document.getElementById('question-field').classList.add('hide');
+  document.getElementById('name-field').classList.add('hide');
+  document.getElementById('placeholder-field').classList.add('hide');
+  document.getElementById('validation-field').classList.add('hide');
+  document.getElementById('options-field').classList.add('hide');
+}
+
 function showHeadingFields() {
   document.getElementById('question-field').classList.remove('hide');
 }
@@ -293,10 +301,12 @@ function showTextFields() {
 
 const newQuestionType = {
   heading: showHeadingFields,
-  text: showTextFields
+  text: showTextFields,
+  '': resetAllFields,
 }
 
 function setNewFieldType(selectedType) {
+  resetAllFields();
   newQuestionType[selectedType]();
 }
 
