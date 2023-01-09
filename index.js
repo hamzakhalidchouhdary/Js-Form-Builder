@@ -348,7 +348,8 @@ function readFormFields(event) {
     const fieldType = field.type;
     const fieldDataSet = field.dataset;
     const fieldIsChecked = field.checked;
-    if (!fieldName) return; // ignore if name or value not assigned
+    const isHidden = field.hidden || field.parentElement.hidden;
+    if (!fieldName || isHidden) return; // ignore if name or value not assigned
     formData[fieldName] = null;
     switch (fieldType) {
       case 'radio':
