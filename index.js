@@ -281,35 +281,35 @@ const setFormField = {
 showForm();
 
 function resetAllFields() {
-  document.getElementById('question-field').classList.add('hide');
-  document.getElementById('name-field').classList.add('hide');
-  document.getElementById('placeholder-field').classList.add('hide');
-  document.getElementById('validation-field').classList.add('hide');
-  document.getElementById('options-field').classList.add('hide');
+  document.getElementById('question-field').setAttribute('hidden', true);
+  document.getElementById('name-field').setAttribute('hidden', true);
+  document.getElementById('placeholder-field').setAttribute('hidden', true);
+  document.getElementById('validation-field').setAttribute('hidden', true);
+  document.getElementById('options-field').setAttribute('hidden', true);
 }
 
 function showHeadingFields() {
-  document.getElementById('question-field').classList.remove('hide');
+  document.getElementById('question-field').removeAttribute('hidden');
 }
 
 function showTextFields() {
-  document.getElementById('question-field').classList.remove('hide');
-  document.getElementById('name-field').classList.remove('hide');
-  document.getElementById('placeholder-field').classList.remove('hide');
-  document.getElementById('validation-field').classList.remove('hide');
+  document.getElementById('question-field').removeAttribute('hidden');
+  document.getElementById('name-field').removeAttribute('hidden');
+  document.getElementById('placeholder-field').removeAttribute('hidden');
+  document.getElementById('validation-field').removeAttribute('hidden');
 }
 
 function showMultiOptionFields() {
-  document.getElementById('question-field').classList.remove('hide');
-  document.getElementById('name-field').classList.remove('hide');
-  document.getElementById('validation-field').classList.remove('hide');
-  document.getElementById('options-field').classList.remove('hide');
+  document.getElementById('question-field').removeAttribute('hidden');
+  document.getElementById('name-field').removeAttribute('hidden');
+  document.getElementById('validation-field').removeAttribute('hidden');
+  document.getElementById('options-field').removeAttribute('hidden');
 }
 
 function showRangeFields() {
-  document.getElementById('question-field').classList.remove('hide');
-  document.getElementById('name-field').classList.remove('hide');
-  document.getElementById('validation-field').classList.remove('hide');
+  document.getElementById('question-field').removeAttribute('hidden');
+  document.getElementById('name-field').removeAttribute('hidden');
+  document.getElementById('validation-field').removeAttribute('hidden');
 }
 
 const newQuestionType = {
