@@ -318,6 +318,7 @@ const newQuestionType = {
   radio: showCheckalbeFields,
   checkbox: showCheckalbeFields,
   range: showRangeFields,
+  select: showCheckalbeFields,
   '': resetAllFields,
 }
 
