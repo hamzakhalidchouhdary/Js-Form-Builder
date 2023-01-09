@@ -281,15 +281,15 @@ const setFormField = {
 showForm();
 
 function showHeadingFields() {
-  
+  document.getElementById('question-field').classList.remove('hide');
 }
 
 const newQuestionType = {
   heading: showHeadingFields
 }
 
-function setNewFieldType(event) {
-  console.log(event);
+function setNewFieldType(selectedType) {
+  newQuestionType[selectedType]();
 }
 
 function addNewQuestion(event) {
