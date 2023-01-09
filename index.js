@@ -306,11 +306,18 @@ function showCheckalbeFields() {
   document.getElementById('options-field').classList.remove('hide');
 }
 
+function showRangeFields() {
+  document.getElementById('question-field').classList.remove('hide');
+  document.getElementById('name-field').classList.remove('hide');
+  document.getElementById('validation-field').classList.remove('hide');
+}
+
 const newQuestionType = {
   heading: showHeadingFields,
   text: showTextFields,
   radio: showCheckalbeFields,
   checkbox: showCheckalbeFields,
+  range: showRangeFields,
   '': resetAllFields,
 }
 
