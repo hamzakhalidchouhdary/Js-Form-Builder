@@ -299,7 +299,7 @@ function showTextFields() {
   document.getElementById('validation-field').classList.remove('hide');
 }
 
-function showCheckalbeFields() {
+function showMultiOptionFields() {
   document.getElementById('question-field').classList.remove('hide');
   document.getElementById('name-field').classList.remove('hide');
   document.getElementById('validation-field').classList.remove('hide');
@@ -315,10 +315,10 @@ function showRangeFields() {
 const newQuestionType = {
   heading: showHeadingFields,
   text: showTextFields,
-  radio: showCheckalbeFields,
-  checkbox: showCheckalbeFields,
+  radio: showMultiOptionFields,
+  checkbox: showMultiOptionFields,
   range: showRangeFields,
-  select: showCheckalbeFields,
+  select: showMultiOptionFields,
   '': resetAllFields,
 }
 
