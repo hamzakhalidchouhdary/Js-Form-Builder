@@ -284,8 +284,16 @@ function showHeadingFields() {
   document.getElementById('question-field').classList.remove('hide');
 }
 
+function showTextFields() {
+  document.getElementById('question-field').classList.remove('hide');
+  document.getElementById('name-field').classList.remove('hide');
+  document.getElementById('placeholder-field').classList.remove('hide');
+  document.getElementById('validation-field').classList.remove('hide');
+}
+
 const newQuestionType = {
-  heading: showHeadingFields
+  heading: showHeadingFields,
+  text: showTextFields
 }
 
 function setNewFieldType(selectedType) {
