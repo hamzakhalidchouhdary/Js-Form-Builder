@@ -203,6 +203,7 @@ const showQuestionPopUp = () => {
 const closeQuestionPopUp = () => {
   const questionPopUp = document.getElementById('questionPopUp');
   questionPopUp.classList.add('hide');
+  document.getElementById('newQuestionForm').reset();
 }
 
 const addHeading = ({question: value, size = 1}) => {

@@ -12,7 +12,7 @@
 <body class="text-capitalize">
   <form id="root" class="container"></form>
   <div id="questionPopUp" class="question-container ">
-    <form class="question-form" onsubmit="addNewQuestion(event)">
+    <form id="newQuestionForm" class="question-form" onsubmit="addNewQuestion(event)">
       <div id="type-field" class="form-group">
         <label for="type">Type</label>
         <select id="type" onchange="setNewFieldType(event.target.value)" data-is-required="required" class="form-control" name="type" id="type">
