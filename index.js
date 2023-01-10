@@ -332,6 +332,7 @@ function addNewQuestion(event) {
   showErrors(formValidation);
   if (!isErrors) {
     setFormField[questionData.type](questionData);
+    closeQuestionPopUp();
     showForm();
   }
   console.log(formData);
