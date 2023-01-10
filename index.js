@@ -196,13 +196,11 @@ const createHeading = (data) => {
 }
 
 const showQuestionPopUp = () => {
-  const questionPopUp = document.getElementById('questionPopUp');
-  questionPopUp.classList.remove('hide');
+  document.getElementById('questionPopUp').classList.remove('hide');
 }
 
 const closeQuestionPopUp = () => {
-  const questionPopUp = document.getElementById('questionPopUp');
-  questionPopUp.classList.add('hide');
+  document.getElementById('questionPopUp').classList.add('hide');
   document.getElementById('newQuestionForm').reset();
 }
 
