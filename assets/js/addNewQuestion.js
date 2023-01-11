@@ -62,6 +62,7 @@ const showQuestionPopUp = () => {
 
 const closeQuestionPopUp = () => {
   document.getElementById('questionPopUp').classList.add('hide');
+  resetAllFields();
   resetQuestionForm();
 }
 
