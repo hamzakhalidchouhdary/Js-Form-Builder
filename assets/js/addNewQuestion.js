@@ -62,5 +62,7 @@ const showQuestionPopUp = () => {
 
 const closeQuestionPopUp = () => {
   document.getElementById('questionPopUp').classList.add('hide');
-  document.getElementById('newQuestionForm').reset();
+  resetQuestionForm();
 }
+
+const resetQuestionForm = () => document.getElementById('newQuestionForm').reset();
