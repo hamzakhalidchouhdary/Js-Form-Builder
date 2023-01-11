@@ -24,12 +24,12 @@
           <option value="range">Range</option>
           <option value="select">Select</option>
         </select>
-        <span id="type-error" class="text-danger small"></span>
+        <span id="type-error" class="error text-danger small"></span>
       </div>
       <div id="question-field" hidden class="form-group">
         <label for="question">Question</label>
         <input id="question" data-is-required="required" type="text" name="question" class="form-control">
-        <span id="question-error" class="text-danger small"></span>
+        <span id="question-error" class="error text-danger small"></span>
       </div>
       <div id="name-field" hidden class="form-group">
         <label for="name">name</label>
@@ -39,7 +39,7 @@
       <div id="placeholder-field" hidden class="form-group">
         <label for="placeholder">placeholder</label>
         <input id="placeholder" data-is-name="should be string" type="text" name="placeholder" class="form-control">
-        <span id="placeholder-error" class="text-danger small"></span>
+        <span id="placeholder-error" class="error text-danger small"></span>
       </div>
       <div id="validation-field" hidden class="form-group">
         <div>
@@ -53,18 +53,18 @@
         <label for="isEmail">email</label>
         <input id="isPattran" type="checkbox" name="validation" value="isPattran">
         <label for="isPattran">pattren</label>
-        <span id="validation-error" class="text-danger small"></span>
+        <span id="validation-error" class="error text-danger small"></span>
       </div>
       <div id="options-field" hidden>
         <label for="options">Options</label>
         <div class="form-group row">
           <div class="col col-5 col-sm-5">
             <input id="options" data-is-name="should be string" type="text" name="value" class="form-control w-100">
-            <span id="value-error" class="text-danger small"></span>
+            <span id="value-error" class="error text-danger small"></span>
           </div>
           <div class="col col-5 col-sm-5">
             <input id="options" data-is-name="should be string" type="text" name="label" class="form-control">
-            <span id="label-error" class="text-danger small"></span>
+            <span id="label-error" class="errror text-danger small"></span>
           </div>
           <div class="col col-2 col-sm-2">
             <button type="button" class="btn btn-info float-right">ADD</button>
