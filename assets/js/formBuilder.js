@@ -74,8 +74,10 @@ const formData = [
 const root = document.getElementById('root');
 
 const showForm = () => {
+  getUserData();
+  if (!GLOBAL_STATE.length) return;
   root.innerHTML = '';
-  formData.forEach(question => {
+  GLOBAL_STATE.forEach(question => {
     root.appendChild(getFormField[question.type](question));
   });
   const submitBtn = document.createElement('button');
