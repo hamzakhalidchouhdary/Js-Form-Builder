@@ -1,14 +1,3 @@
-function addNewQuestion(event) {
-  const [questionData, formValidation, isErrors] = readFormFields(event);
-  showErrors(formValidation);
-  if (!isErrors) {
-    setFormField[questionData.type](questionData);
-    closeQuestionPopUp();
-    showForm();
-  }
-  console.log(formData);
-}
-
 const newQuestionType = {
   heading: showHeadingFields,
   text: showTextFields,

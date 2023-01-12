@@ -195,61 +195,6 @@ const createHeading = (data) => {
   return questionContaioner;
 }
 
-const addHeading = ({question: value, size = 1}) => {
-  formData.push({
-    type: 'heading',
-    value,
-    size
-  });
-}
-
-const addTextInput = ({question: statement, name = '', placeholder = null}) => {
-  formData.push({
-    statement,
-    type: 'text',
-    name: name,
-    id: null,
-    placeholder: placeholder || name,
-    value: ''
-  });
-}
-
-const addRadioInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
-  formData.push({
-    statement,
-    type: 'radio',
-    name,
-    options
-  });
-}
-
-const addCheckInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
-  formData.push({
-    statement,
-    type: 'checkbox',
-    name,
-    options
-  });
-}
-
-const addRangeInput = ({question: statement, name = '', value = ''}) => {
-  formData.push({
-    statement,
-    type: 'range',
-    name,
-    value
-  });
-}
-
-const addSelectInput = ({question: statement, name = '', options = [{value: '', label: 'Select One'}]}) => {
-  formData.push({
-    statement,
-    type: 'select',
-    name,
-    options
-  });
-}
-
 const getFormField = {
   text: createTextInput,
   radio: createRadioInput,
@@ -257,15 +202,6 @@ const getFormField = {
   range: createRangeInput,
   heading: createHeading,
   select: createSelectInput
-}
-
-const setFormField = {
-  heading: addHeading,
-  text: addTextInput,
-  radio: addRadioInput,
-  checkbox: addCheckInput,
-  range: addRangeInput,
-  select: addSelectInput
 }
 
 showForm();
