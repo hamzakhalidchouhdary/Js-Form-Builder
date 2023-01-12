@@ -1,9 +1,11 @@
 const KEY = 'jsFormBuilderData';
 
-function setUserData(data) {
-  window.localStorage.setItem(KEY, JSON.stringify(data));
+var GLOBAL_STATE = [];
+
+function setUserData() {
+  window.localStorage.setItem(KEY, JSON.stringify(GLOBAL_STATE));
 }
 
 function getUserData() {
-  return JSON.parse(window.localStorage.getItem(KEY));
+  GLOBAL_STATE = JSON.parse(window.localStorage.getItem(KEY)) || [];
 }
