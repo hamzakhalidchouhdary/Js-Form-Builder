@@ -80,7 +80,7 @@ const addOptions = () => {
     value: `${optLabel}:${optValue}`,
     label: optLabel
   });
-  document.getElementById('options-field').appendChild(optElement);
+  document.getElementById('options-wrapper').appendChild(optElement);
   }
 
 const resetQuestionForm = () => document.getElementById('newQuestionForm').reset();
