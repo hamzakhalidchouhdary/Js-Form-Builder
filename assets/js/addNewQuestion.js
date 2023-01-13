@@ -55,6 +55,10 @@ const closeQuestionPopUp = () => {
   resetQuestionForm();
 }
 
+function removeOption(field) {
+  field.parentElement.setAttribute('hidden', true)
+}
+
 const createOptionsElement = (data) => {
   let questionContaioner = getQuestionWrapper();
   questionContaioner.setAttribute('class', 'form-group');
@@ -67,6 +71,7 @@ const createOptionsElement = (data) => {
   field.setAttribute('name', data.name);
   field.setAttribute('value', data.value);
   field.setAttribute('id', data.id || data.name)
+  field.setAttribute('onclick', "removeOption(this)")
   return questionContaioner;
 }
 
