@@ -83,4 +83,7 @@ const addOptions = () => {
   document.getElementById('options-wrapper').appendChild(optElement);
   }
 
-const resetQuestionForm = () => document.getElementById('newQuestionForm').reset();
+const resetQuestionForm = () => {
+  document.getElementById('newQuestionForm').reset();
+  document.getElementById('options-wrapper').innerHTML = '';
+}
