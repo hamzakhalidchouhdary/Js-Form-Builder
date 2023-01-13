@@ -5,7 +5,6 @@ function addNewQuestion(event) {
     closeQuestionPopUp();
     setState(questionData);
   }
-  console.log(formData);
 }
 
 function setState(data){

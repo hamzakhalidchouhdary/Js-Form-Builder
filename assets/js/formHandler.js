@@ -11,7 +11,6 @@ function readFormFields(event) {
     const fieldIsChecked = field.checked;
     const isHidden = field.hidden || field.parentElement.hidden;
     if (!fieldName || isHidden) return; // ignore if name or value not assigned
-    formData[fieldName] = null;
     switch (fieldType) {
       case 'radio':
         if (fieldIsChecked) formData[fieldName] = fieldValue;
@@ -61,7 +60,7 @@ function showErrors(validationSet) {
   Object.entries(validationSet).forEach(([key, validation]) => {
     const errorContainer = document.getElementById(`${key}-error`);
     if(errorContainer && !validation.isValid) errorContainer.innerText = validation.message;
-    else errorContainer.innerText = ''
+    else if(errorContainer) errorContainer.innerText = ''
   })
 }
 
