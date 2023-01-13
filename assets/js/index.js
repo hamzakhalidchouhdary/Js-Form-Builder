@@ -33,22 +33,32 @@ const addTextInput = ({question: statement, name = '', placeholder = null}) => {
     value: ''
   });
 }
-
-const addRadioInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
+const extractOptions = (options = []) => {
+  const optionList = [];
+  options.forEach(opt => {
+    let data = opt.split(':');
+    optionList.push({
+      label: data[0],
+      value: data[1]
+    })
+  })
+  return optionList;
+}
+const addRadioInput = ({question: statement, name = '', options = []}) => {
   return ({
     statement,
     type: 'radio',
     name,
-    options
+    options: extractOptions(options)
   });
 }
 
-const addCheckInput = ({question: statement, name = '', options = [{value: '', label: 1}, {value: '', label: 2}]}) => {
+const addCheckInput = ({question: statement, name = '', options = []}) => {
   return ({
     statement,
     type: 'checkbox',
     name,
-    options
+    options: extractOptions(options)
   });
 }
 
