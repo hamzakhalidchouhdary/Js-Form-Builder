@@ -22,14 +22,15 @@ const addHeading = ({question: value, size = 1}) => {
   });
 }
 
-const addTextInput = ({question: statement, name = '', placeholder = null}) => {
+const addTextInput = ({question: statement, name = '', placeholder = null, validation}) => {
   return ({
     statement,
     type: 'text',
     name: name,
     id: null,
     placeholder: placeholder || name,
-    value: ''
+    value: '',
+    validation
   });
 }
 const extractOptions = (options = []) => {

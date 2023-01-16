@@ -57,6 +57,13 @@ const getQuestionStatement = (text) => {
   return ele;
 };
 
+const validations = {
+  isEmail: {value: 'data-is-email', message: 'Must be valid email'},
+  isRequired: { value: 'data-is-required', message: 'requied'},
+  isString: {value: 'data-is-string', message: 'Must be valid string'},
+  isName: { value: 'data-is-name', message: 'must be valid name'},
+}
+
 const createTextInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getLabel(data.statement, data.id || data.name);
@@ -71,6 +78,9 @@ const createTextInput = (data) => {
   field.setAttribute('name', data.name);
   field.setAttribute('value', data.value);
   field.setAttribute('id', data.id || data.name);
+  data.validation?.forEach(type => {
+    field.setAttribute(validations[type].value, validations[type].message)
+  })
   return questionContaioner;
 }
 const createRadioInput = (data) => {
