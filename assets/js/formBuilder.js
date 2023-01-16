@@ -19,6 +19,30 @@ const showForm = () => {
   root.appendChild(submitBtn);
 }
 
+const createButtonElement = ({text = 'Button', type = 'default', onclick = () => {}}) => {
+  const btnEle = document.createElement('button');
+  btnEle.innerText = text;
+  btnEle.setAttribute('class', `btn btn-${type}`)
+  btnEle.setAttribute('type', 'button')
+  btnEle.addEventListener('click', onclick)
+  return btnEle;
+}
+
+const addFieldActions = (ele) => {
+  const editBtn = createButtonElement({text: 'Edit', onclick: editField});
+  const removeBtn = createButtonElement({text: 'Remove', type: 'danger', onclick: removeField});
+  ele.appendChild(editBtn);
+  ele.appendChild(removeBtn);
+}
+
+function editField(){
+  console.log('editing');
+}
+
+function removeField(){
+  console.log('removing');
+}
+
 const getQuestionWrapper = () => document.createElement('div');
 const getLabel = (text, id = '') => {
   const ele = document.createElement('label');
@@ -36,6 +60,7 @@ const getQuestionStatement = (text) => {
 const createTextInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getLabel(data.statement, data.id || data.name);
+  addFieldActions(questionStatement);
   let field = document.createElement('input');
   questionContaioner.appendChild(questionStatement);
   questionContaioner.appendChild(field);
@@ -52,6 +77,7 @@ const createRadioInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let labelContainer = getQuestionWrapper()
   let questionStatement = getLabel(data.statement, data.id || data.name);
+  addFieldActions(questionStatement);
   labelContainer.appendChild(questionStatement);
   questionContaioner.appendChild(labelContainer);
   questionContaioner.setAttribute('class', 'form-group');
@@ -71,6 +97,7 @@ const createCheckInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let labelContainer = getQuestionWrapper()
   let questionStatement = getLabel(data.statement, data.id || data.name);
+  addFieldActions(questionStatement);
   labelContainer.appendChild(questionStatement);
   questionContaioner.appendChild(labelContainer);
   questionContaioner.setAttribute('class', 'form-group');
@@ -89,6 +116,7 @@ const createCheckInput = (data) => {
 const createRangeInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getLabel(data.statement, data.id || data.name);
+  addFieldActions(questionStatement);
   let field = document.createElement('input');
   questionContaioner.setAttribute('class', 'form-group');
   questionContaioner.appendChild(questionStatement);
@@ -102,6 +130,7 @@ const createRangeInput = (data) => {
 const createSelectInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let questionStatement = getLabel(data.statement, data.id || data.name);
+  addFieldActions(questionStatement);
   let field = document.createElement('select');
   questionContaioner.setAttribute('class', 'form-group');
   field.setAttribute('class', 'form-control')
@@ -120,6 +149,7 @@ const createHeading = (data) => {
   let field = document.createElement(`h${data.size}`);
   questionContaioner.setAttribute('class', 'form-group');
   field.innerText = data.value;
+  addFieldActions(field);
   questionContaioner.appendChild(field);
   return questionContaioner;
 }
