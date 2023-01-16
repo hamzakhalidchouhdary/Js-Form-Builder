@@ -70,12 +70,12 @@ const addRangeInput = ({question: statement, name = '', value = ''}) => {
   });
 }
 
-const addSelectInput = ({question: statement, name = '', options = [{value: '', label: 'Select One'}]}) => {
+const addSelectInput = ({question: statement, name = '', options = []}) => {
   return ({
     statement,
     type: 'select',
     name,
-    options
+    options: extractOptions(options)
   });
 }
 
