@@ -78,7 +78,7 @@ const createTextInput = (data) => {
   field.setAttribute('name', data.name);
   field.setAttribute('value', data.value);
   field.setAttribute('id', data.id || data.name);
-  data.validation?.forEach(type => {
+  data.validations?.forEach(type => {
     field.setAttribute(validations[type].value, validations[type].message)
   })
   return questionContaioner;

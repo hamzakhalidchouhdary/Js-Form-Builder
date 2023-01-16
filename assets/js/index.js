@@ -22,7 +22,7 @@ const addHeading = ({question: value, size = 1}) => {
   });
 }
 
-const addTextInput = ({question: statement, name = '', placeholder = null, validation}) => {
+const addTextInput = ({question: statement, name = '', placeholder = null, validations}) => {
   return ({
     statement,
     type: 'text',
@@ -30,7 +30,7 @@ const addTextInput = ({question: statement, name = '', placeholder = null, valid
     id: null,
     placeholder: placeholder || name,
     value: '',
-    validation
+    validations
   });
 }
 const extractOptions = (options = []) => {
