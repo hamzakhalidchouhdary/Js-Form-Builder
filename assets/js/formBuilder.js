@@ -2,7 +2,13 @@ const root = document.getElementById('root');
 
 const showForm = () => {
   getUserData();
-  if (!GLOBAL_STATE.length) return;
+  if (!GLOBAL_STATE.length) {
+    root.innerHTML = `
+    <div class="container">
+      <h5 class="row text-muted">Create a New field</h5>
+    </div>`;
+    return;
+  }
   root.innerHTML = '';
   GLOBAL_STATE.forEach(question => {
     root.appendChild(getFormField[question.type](question));
