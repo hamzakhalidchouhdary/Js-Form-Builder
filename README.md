@@ -1,9 +1,9 @@
 ### JS Form Builder
-In this project I demonstrated how React Js updates UI. I have created this project to explain React Rendering in Vanilla Js. If you’re new or want to understand how this work in React, you’re at right place, continue your reading.
+I created this project to explain React Rendering in Vanilla Js. In this project I demonstrated how UI is beign updated in React Js. If you’re new to React or want to understand how React work, you’re at right place, continue your reading.
 #### What is React Js
-React is a popular UI/UX state management framework. It uses JS objects for rendering the UI components. JS object is termed as a global state/store in React. To generate the latest UI; Instead of manipulating the DOM elements, the state is modified. As the state is updated, the react library re-rendered the entire UI/UX to reflect the updated UI. In practice this framework is a bit complex to understand. Here I have elaborated how; this concept works in plain JS.
+React is a popular UI/UX state management library written in Js. Rather manipulating DOM elements; React uses Js objects for rendering the UI components. This Js object is termed as a global state/store in React. To generate the latest UI; the state is modified; as the state is updated, the react library re-rendered the entire UI/UX to reflect the latest UI. In practice this framework is a bit complex to understand. But here I have elaborated how this concept works in plain Js.
 #### About the project
-This project is about building HTML form with writing 0 HTML. In form enter necessary details and hit create. A new filed will be add to UI. How does this really work is based on React state and rendering concept. But in Vanilla Js.
-#### How does it build form
-All field related data is available in a global variable or global state. Form builder reads each field available in global state and pass it to render method. Rander method creates relevant element set it's attributes and append it to document body.
-When ever a new field is created append to global state as global state in modified, state is read and render again to reflect latest updates.
+This project is about building HTML form by writing 0 HTML. Just input necessary details and hit create. A new field will be add to UI. How does this really work is based on React state and rendering concept. But in Vanilla Js.
+#### How does it work
+All field related data is available in a global variable or global state. At first, global render method read each field from global state and passed to form builder methods. These methods creates relevant element set it's attributes and append it to document body.
+Whenever a new field is created, first add to global state and call global render method. Render method repeat its cycle and render all fields to UI again.
