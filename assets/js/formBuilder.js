@@ -50,9 +50,10 @@ function removeField(){
 }
 
 const getQuestionWrapper = () => document.createElement('div');
-const getLabel = (text, id = '') => {
+const getLabel = (text, id = '', isRequired = false) => {
   const ele = document.createElement('label');
-  ele.innerText = text;
+  if(isRequired) ele.innerHTML = `${text}<span class='text-danger'>*</span>`;
+  else ele.innerText = text;
   ele.setAttribute('for', id)
   return ele;
 };
@@ -72,7 +73,7 @@ const validations = {
 
 const createTextInput = (data) => {
   let questionContaioner = getQuestionWrapper();
-  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let questionStatement = getLabel(data.statement, data.id || data.name, data.validations?.includes('isRequired'));
   addFieldActions(questionStatement);
   let field = document.createElement('input');
   questionContaioner.appendChild(questionStatement);
@@ -92,7 +93,7 @@ const createTextInput = (data) => {
 const createRadioInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let labelContainer = getQuestionWrapper()
-  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let questionStatement = getLabel(data.statement, data.id || data.name, data.validations?.includes('isRequired'));
   addFieldActions(questionStatement);
   labelContainer.appendChild(questionStatement);
   questionContaioner.appendChild(labelContainer);
@@ -112,7 +113,7 @@ const createRadioInput = (data) => {
 const createCheckInput = (data) => {
   let questionContaioner = getQuestionWrapper();
   let labelContainer = getQuestionWrapper()
-  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let questionStatement = getLabel(data.statement, data.id || data.name, data.validations?.includes('isRequired'));
   addFieldActions(questionStatement);
   labelContainer.appendChild(questionStatement);
   questionContaioner.appendChild(labelContainer);
@@ -131,7 +132,7 @@ const createCheckInput = (data) => {
 }
 const createRangeInput = (data) => {
   let questionContaioner = getQuestionWrapper();
-  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let questionStatement = getLabel(data.statement, data.id || data.name, data.validations?.includes('isRequired'));
   addFieldActions(questionStatement);
   let field = document.createElement('input');
   questionContaioner.setAttribute('class', 'form-group');
@@ -145,7 +146,7 @@ const createRangeInput = (data) => {
 }
 const createSelectInput = (data) => {
   let questionContaioner = getQuestionWrapper();
-  let questionStatement = getLabel(data.statement, data.id || data.name);
+  let questionStatement = getLabel(data.statement, data.id || data.name, data.validations?.includes('isRequired'));
   addFieldActions(questionStatement);
   let field = document.createElement('select');
   questionContaioner.setAttribute('class', 'form-group');
