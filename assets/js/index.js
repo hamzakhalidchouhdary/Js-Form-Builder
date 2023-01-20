@@ -44,39 +44,43 @@ const extractOptions = (options = []) => {
   })
   return optionList;
 }
-const addRadioInput = ({question: statement, name = '', options = []}) => {
+const addRadioInput = ({question: statement, name = '', options = [], validations}) => {
   return ({
     statement,
     type: 'radio',
     name,
-    options: extractOptions(options)
+    options: extractOptions(options),
+    validations
   });
 }
 
-const addCheckInput = ({question: statement, name = '', options = []}) => {
+const addCheckInput = ({question: statement, name = '', options = [], validations}) => {
   return ({
     statement,
     type: 'checkbox',
     name,
-    options: extractOptions(options)
+    options: extractOptions(options),
+    validations
   });
 }
 
-const addRangeInput = ({question: statement, name = '', value = ''}) => {
+const addRangeInput = ({question: statement, name = '', value = '', validations}) => {
   return ({
     statement,
     type: 'range',
     name,
-    value
+    value,
+    validations
   });
 }
 
-const addSelectInput = ({question: statement, name = '', options = []}) => {
+const addSelectInput = ({question: statement, name = '', options = [], validations}) => {
   return ({
     statement,
     type: 'select',
     name,
-    options: extractOptions(options)
+    options: extractOptions(options),
+    validations
   });
 }
 
